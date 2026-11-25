@@ -1,0 +1,9 @@
+{"id": "R1-东区", "district": "东区", "from_day": "2027-06-01", "category": "结算", "subtype": null, "compare_group": "结算"}
+{"id": "R2-东区", "district": "东区", "from_day": "2027-06-09", "category": "结算", "subtype": "付款期", "compare_group": "结算"}
+{"id": "R3-东区", "district": "东区", "from_day": "2027-06-09", "category": "结算", "subtype": "付款进度", "compare_group": "结算"}
+{"id": "R1-南区", "district": "南区", "from_day": "2027-06-01", "category": "结算", "subtype": null, "compare_group": "结算"}
+{"id": "R2-南区", "district": "南区", "from_day": "2027-06-11", "category": "结算", "subtype": "付款期", "compare_group": "结算"}
+{"id": "R3-南区", "district": "南区", "from_day": "2027-06-11", "category": "结算", "subtype": "付款进度", "compare_group": "结算"}
+{"id": "R1-北区", "district": "北区", "from_day": "2027-06-01", "category": "结算", "subtype": null, "compare_group": "结算"}
+{"id": "R2-北区", "district": "北区", "from_day": "2027-06-13", "category": "结算", "subtype": "付款期", "compare_group": "结算"}
+{"id": "R3-北区", "district": "北区", "from_day": "2027-06-13", "category": "结算", "subtype": "付款进度", "compare_group": "结算"}

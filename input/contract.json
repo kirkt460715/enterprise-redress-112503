@@ -1,0 +1,149 @@
+{
+  "format": "jsonl",
+  "version": 1,
+  "tables": {
+    "organizations": {
+      "summary": "参与转办的窗口与部门",
+      "columns": {
+        "id": "单位",
+        "name": "名称",
+        "scope": "能承接的事项类别"
+      },
+      "key": [
+        "id"
+      ],
+      "refs": {}
+    },
+    "cases": {
+      "summary": "各政企渠道提交的企业议题",
+      "columns": {
+        "id": "议题",
+        "ticket": "该渠道的来件号",
+        "channel": "渠道",
+        "firm": "来件企业稳定编号",
+        "district": "片区",
+        "industry": "所属行业",
+        "category": "事项类别",
+        "at": "窗口受理时点",
+        "subject": "议题描述",
+        "subtype": "当时类别体系下的子类，无法细分时留空"
+      },
+      "key": [
+        "id"
+      ],
+      "refs": {}
+    },
+    "identity": {
+      "summary": "企业对来件是否属于同次事项的确认",
+      "columns": {
+        "id": "确认",
+        "left": "来源议题",
+        "right": "候选相同议题",
+        "received": "收到确认时间",
+        "relation": "同议题、不同或待核"
+      },
+      "key": [
+        "id"
+      ],
+      "refs": {
+        "left": "cases.id",
+        "right": "cases.id"
+      }
+    },
+    "events": {
+      "summary": "主协办回执、补件、企业通知与复开",
+      "columns": {
+        "id": "事件",
+        "issue": "议题记录",
+        "at": "事实发生时间",
+        "seen": "协调员获知时间",
+        "unit": "部门",
+        "action": "业务动作",
+        "related": "本动作指向的事件号，可空",
+        "reason": "动作说明"
+      },
+      "key": [
+        "id"
+      ],
+      "refs": {
+        "issue": "cases.id",
+        "unit": "organizations.id"
+      }
+    },
+    "promise": {
+      "summary": "窗口向企业确认过的对象与时限",
+      "columns": {
+        "id": "承诺号",
+        "issue": "所涉议题",
+        "created": "通知时点",
+        "deadline": "承诺的反馈日期",
+        "recipient": "接收企业",
+        "unit": "责任方"
+      },
+      "key": [
+        "id"
+      ],
+      "refs": {
+        "issue": "cases.id",
+        "unit": "organizations.id"
+      }
+    },
+    "targets": {
+      "summary": "事项类别的目标处理时限",
+      "columns": {
+        "category": "事项类别",
+        "duration_hours": "业务目标计时时长"
+      },
+      "key": [
+        "category"
+      ],
+      "refs": {}
+    },
+    "contact": {
+      "summary": "协调会可用于联系承办单位的实际窗口",
+      "columns": {
+        "id": "联络窗口",
+        "unit": "能联系的单位",
+        "start": "窗口起时",
+        "end": "窗口止时",
+        "limit": "最多独立协调次数",
+        "pending": "允许讨论的待办议题，空集合表示现有事项通用"
+      },
+      "key": [
+        "id"
+      ],
+      "refs": {
+        "unit": "organizations.id"
+      }
+    },
+    "classifications": {
+      "summary": "各片区过渡期间可用的类别范围及比较用父类",
+      "columns": {
+        "id": "口径号",
+        "district": "片区",
+        "from_day": "开始使用日期",
+        "category": "本期收件类别",
+        "subtype": "已区分的细类，空表示未拆",
+        "compare_group": "旧口径可直接对比的父类"
+      },
+      "key": [
+        "id"
+      ],
+      "refs": {}
+    },
+    "meetings": {
+      "summary": "已使用的周度资料范围与口径备注",
+      "columns": {
+        "id": "会次",
+        "period_from": "报告观察的起日",
+        "period_to": "报告观察的结束日",
+        "cutoff": "当时已收到资料的截止点",
+        "districts": "纳入的机构地区"
+      },
+      "key": [
+        "id"
+      ],
+      "refs": {}
+    }
+  }
+}

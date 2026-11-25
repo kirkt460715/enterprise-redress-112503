@@ -1,0 +1,4 @@
+{"id": "L1", "left": "I001", "right": "I062", "received": "2027-06-06T09:00:00+08:00", "relation": "待核"}
+{"id": "L2", "left": "I001", "right": "I061", "received": "2027-06-06T09:00:00+08:00", "relation": "不同"}
+{"id": "L3", "left": "I001", "right": "I062", "received": "2027-06-08T09:00:00+08:00", "relation": "同议题"}
+{"id": "L4", "left": "I009", "right": "I018", "received": "2027-06-10T09:00:00+08:00", "relation": "待核"}
